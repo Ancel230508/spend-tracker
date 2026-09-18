@@ -10,7 +10,8 @@ def get_db_connection():
         user=os.getenv('DB_USER', 'root'),
         password=os.getenv('DB_PASSWORD', 'Ancel@230508'),
         database=os.getenv('DB_NAME', 'spend_tracker'),
-        port=int(os.getenv('DB_PORT', 3306))
+        port=int(os.getenv('DB_PORT', 3306)),
+        ssl_disabled=False  # Required for cloud databases like Aiven
     )
 
 @app.route('/')
